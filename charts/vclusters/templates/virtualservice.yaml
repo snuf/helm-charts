@@ -1,0 +1,21 @@
+--- 
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: '{{host.name}}'
+  namespace: '{{host.namespace}}'
+spec:
+  gateways:
+  - istio-system/istio-gateway
+  hosts:
+  - '{{host.namespace}}.{{host.domain}}'
+  tls:
+  - match:
+    - port: 443
+      sniHosts:
+      - '{{host.namespace}}.{{host.domain}}'
+    route:
+    - destination:
+        host: 'vcluster--{{host.namespace}}--{{host.name}}.{{host.namespace}}.svc.cluster.local'
+        port:
+          number: 443

@@ -1,0 +1,7 @@
+guest:
+  name: dev2
+host:
+  name: in-cluster
+  realname: vcluster
+  namespace: vcluster-dev2
+  domain: vcluster.demo.io
