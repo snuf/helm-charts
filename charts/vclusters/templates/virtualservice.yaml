@@ -2,8 +2,8 @@
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: '{{ .Values.host.name}}'
-  namespace: '{{ .Values.host.namespace}}'
+  name: '{{ .Values.guest.name }}'
+  namespace: '{{ .Values.host.namespace }}'
 spec:
   gateways:
   - istio-system/istio-gateway
