@@ -10,13 +10,13 @@ Expand the name of the chart.
 Create a default fully qualified internal name.
 */}}
 {{- define "vcluster.internalName" -}}
-{{- printf "vcluster--$s--%s.%s.svc.cluster.local" .Values.host.namespace .Values.host.name .Values.host.namespace -}}
+{{- printf "vcluster--%s--%s.svc.cluster.local" .Values.host.namespace .Values.guest.name -}}
 {{- end -}}
 
 {{/*
 Create the default sniHost
 */}}
 {{- define "vcluster.sniHost" -}}
-{{- printf "$s.%s" .Values.host.namespace .Values.host.domain -}}
+{{- printf "%s.%s" .Values.host.namespace .Values.host.domain -}}
 {{- end -}}
 
