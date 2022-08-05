@@ -1,9 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "vcluster-ingress.fullname" . }}-test-connection"
-  labels:
-    {{- include "vcluster-ingress.labels" . | nindent 4 }}
+  name: "{{ .Values.host.name  }}-test-connection"
   annotations:
     "helm.sh/hook": test
 spec:
@@ -11,5 +9,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "vcluster-ingress.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "vcluster.internalName" . }}:443']
   restartPolicy: Never
