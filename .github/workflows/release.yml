@@ -25,7 +25,7 @@ jobs:
 
       - name: Add Helm repo for vcluster
         run: |
-          helm repo add bitnami https://https://charts.loft.sh
+          helm repo add vcluster https://charts.loft.sh
           helm repo update
 
       - name: Run chart-releaser
