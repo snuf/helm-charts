@@ -13,3 +13,7 @@ version: 0.1.1
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
 appVersion: "0.1.1"
+dependencies:
+- name: "vcluster"
+  version: 0.10.2
+  repository: https://charts.loft.sh
