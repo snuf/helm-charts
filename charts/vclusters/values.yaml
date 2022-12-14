@@ -5,3 +5,6 @@ host:
   name: in-cluster
   namespace: vcluster-devX
   domain: vcluster.demo.io
+hooks:
+  argocd-enrolment:
+    enabled: true
