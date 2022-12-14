@@ -6,5 +6,5 @@ host:
   namespace: vcluster-devX
   domain: vcluster.demo.io
 hooks:
-  argocd-enrolment:
+  argocd_enrolment:
     enabled: true
