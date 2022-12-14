@@ -2,7 +2,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: argocd-vcluster-enrolment-{{ .Values.guest.name }}-
+  generateName: argocd-vcluster-enrolment-
   annotations:
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
@@ -10,7 +10,7 @@ spec:
   template:
     spec:
       containers:
-      - name: argocd-vcluster-enrolment-{{ .Values.guest.name }}
+      - name: argocd-vcluster-enrolment
         image: busybox
         command: ["echo",  "hello {{ .Values.guest.name }} on {{ .Values.host.name }}"]
       restartPolicy: Never

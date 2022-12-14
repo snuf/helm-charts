@@ -1,9 +1,9 @@
 --- 
 guest:
-  name: devX
+  name: devx
 host:
   name: in-cluster
-  namespace: vcluster-devX
+  namespace: vcluster-devx
   domain: vcluster.demo.io
 hooks:
   argocd_enrolment:
