@@ -1,7 +1,8 @@
+{{ if .Values.hooks.argocd-enrolment.enabled }}
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: argocd-vcluster-enrolment-
+  generateName: argocd-vcluster-enrolment-{{ .Values.guest.name }}-
   annotations:
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
@@ -9,8 +10,9 @@ spec:
   template:
     spec:
       containers:
-      - name: pi
-        image: perl:5.34.0
-        command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+      - name: argocd-vcluster-enrolment-{{ .Values.guest.name }}
+        image: busybox
+        command: ["echo",  "hello {{ .Values.guest.name }} on {{ .Values.host.name }}"]
       restartPolicy: Never
-  backoffLimit: 2
+  backoffLimit: 1
+{{ end }}
