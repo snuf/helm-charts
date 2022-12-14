@@ -1,7 +1,7 @@
+--- 
 guest:
   name: devX
 host:
   name: in-cluster
-  realname: vcluster
   namespace: vcluster-devX
   domain: vcluster.demo.io
