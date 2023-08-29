@@ -7,4 +7,5 @@ host:
   domain: vcluster.demo.io
 hooks:
   argocd_enrolment:
+    tag: 107
     enabled: true

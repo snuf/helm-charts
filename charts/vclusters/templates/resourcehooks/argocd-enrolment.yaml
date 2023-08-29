@@ -11,8 +11,18 @@ spec:
     spec:
       containers:
       - name: argocd-vcluster-enrolment
-        image: busybox
-        command: ["echo",  "hello {{ .Values.guest.name }} on {{ .Values.host.name }}"]
+        image: argocd-vcluster-enrolment:{{ .Values.hooks.argocd_enrolment.tag }}
+        args:
+          - -action
+          - add
+          - -cluster
+          - {{ .Values.host.name }}
+          - -vcluster
+          - {{ .values.guest.name }}
+          - -vcluster-namespace
+          - {{ .Values.host.namespace }}
+          - -vcluster-secret-name
+          - {{ .Values.host.name }}-{{ .Values.guest.name }}
       restartPolicy: Never
   backoffLimit: 1
 {{ end }}
