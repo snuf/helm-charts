@@ -18,7 +18,7 @@ spec:
           - -cluster
           - {{ .Values.host.name }}
           - -vcluster
-          - {{ .values.guest.name }}
+          - {{ .Values.guest.name }}
           - -vcluster-namespace
           - {{ .Values.host.namespace }}
           - -vcluster-secret-name
