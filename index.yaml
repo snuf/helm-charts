@@ -2,6 +2,20 @@ apiVersion: v1
 entries:
   vcluster:
   - apiVersion: v2
+    appVersion: 0.1.6
+    created: "2023-08-29T17:25:04.99920915Z"
+    dependencies:
+    - name: vcluster
+      repository: https://charts.loft.sh
+      version: 0.10.2
+    description: A Helm chart for Kubernetes
+    digest: 3b9939faca7e3878fbed7aa63b609dd83fc9301a7e2413f6a00c0f6b70aac418
+    name: vcluster
+    type: application
+    urls:
+    - https://github.com/snuf/helm-charts/releases/download/vcluster-0.1.6/vcluster-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
     appVersion: 0.1.5
     created: "2022-12-14T17:55:37.48555664Z"
     dependencies:
@@ -85,4 +99,4 @@ entries:
     urls:
     - https://github.com/snuf/helm-charts/releases/download/vcluster-0.1.0/vcluster-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-14T17:55:37.485577441Z"
+generated: "2023-08-29T17:25:04.999401853Z"
